@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-// Hook qui detecte le chemin sur lequel se trouve l'utilisateur
+// Hook qui detecte la route sur laquelle se trouve l'utilisateur
 const DetectedPath = () => {
     const [path, setPath] = useState(window.location.pathname);
 

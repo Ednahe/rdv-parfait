@@ -1,71 +1,84 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Autoplay, Pagination, Navigation } from "swiper/modules";
-
+import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
-const SwiperHome = () => {
-    const dataSlide = [
-        {
-            color: "red",
-            title: "Salut"
-        },
-        {
-            color: "blue",
-            title: "bonjour"
-        }
-    ]
+// typage des données contenu dans le swiper
+type SlideData = {
+    color: string;
+    title: string;
+    background: string;
+  };
 
-    return (
-        <div className="container-swiper-home">
-            <Swiper
-          direction={"vertical"}
-        //   effect={"coverflow"}
-        //   grabCursor={true}
-        //   centeredSlides={true}
-        //   loop={true}
-        //   slidesPerView={'auto'}
-        //   coverflowEffect={{
-        //     rotate: 0,
-        //     stretch: 0,
-        //     depth: 100,
-        //     modifier: 2.5,
-        //   }}
-        //   autoplay={{
-        //     delay: 2500,
-        //     disableOnInteraction: false, 
-        //   }}
-        //   pagination={{ el: ".swiper-pagination", clickable: false }}
-        //   modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
+const SwiperHome = () => {
+    // déclaration des données contenu dans le swiper
+  const dataSlide: SlideData[] = [
+    {
+      color: "red",
+      title: "Un restaurant",
+      background: "rgba(255, 0, 0, 0.25)"
+    },
+    {
+      color: "blue",
+      title: "Un cinéma",
+      background: "rgba(0, 0, 255, 0.25)"
+    },
+    {
+      color: "green",
+      title: "Un bar",
+      background: "rgba(0, 255, 0, 0.25)"
+    },
+    {
+      color: "yellow",
+      title: "Une boîte de nuit",
+      background: "rgba(255, 255, 0, 0.25)"
+    },
+    {
+      color: "purple",
+      title: "Une exposition",
+      background: "rgba(128, 0, 128, 0.25)"
+    },
+    {
+      color: "orange",
+      title: "Un marché",
+      background: "rgba(255, 165, 0, 0.25)"
+    },
+    {
+      color: "pink",
+      title: "Un concert",
+      background: "rgba(255, 0, 255, 0.25)"
+    },
+  ];
+
+  return (
+    <div className="container-swiper-home">
+        {/* paramétrage du swiper  */}
+      <Swiper
+        direction={"vertical"}
         speed={800}
         loop={true}
-          className="slider">
-                <SwiperSlide>
-                    <h1>Salut</h1>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <h1>bonjour</h1>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <h1>coucou</h1>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <h1>ola</h1>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <h1>guten tag</h1>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <h1>buenos dias</h1>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <h1>good morning</h1>
-                </SwiperSlide>
-            </Swiper>
-        </div>
-    );
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
+        modules={[Autoplay]}
+        allowTouchMove={false}
+        noSwiping={true}
+        simulateTouch={false}
+        touchStartPreventDefault={true}
+      >
+        {/* injection des données dans le swiper  */}
+        {dataSlide.map((data, index) => (
+          <SwiperSlide key={index}>
+            <div className="slide-content" style={{ background: data.background }}>
+              <h1 className="title-swip" style={{ color: data.color }}>
+                {data.title}
+              </h1>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
 };
 
 export default SwiperHome;
