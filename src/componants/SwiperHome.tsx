@@ -12,7 +12,7 @@ type SlideData = {
     background: string;
   };
 
-const SwiperHome = () => {
+const SwiperHome: React.FC = () => {
     // déclaration des données contenu dans le swiper
   const dataSlide: SlideData[] = [
     {

@@ -6,7 +6,7 @@ import Contact from "./Contact";
 import About from "./About";
 import Partner from "./Partner";
 
-const Main = () => {
+const Main: React.FC = () => {
 
   return <>
       <Router>

@@ -1,7 +1,10 @@
 import React from "react";
 
-const Partner = () => {
-  return <h1>Partner</h1>;
+const Partner: React.FC = () => {
+  return <section className="first-section">
+    <h1>Partner</h1>
+  </section>
+
 };
 
 export default Partner;

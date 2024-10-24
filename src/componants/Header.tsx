@@ -1,23 +1,18 @@
 import React, { useState } from "react";
-import DetectedPath from "../hooks/detectedPath";
 import logo from "../images/logo.png";
 import burgerMenu from "../images/burger.svg";
 
-const Header = () => {
+const Header: React.FC = () => {
   const [openBurgerMenu, setOpenBurgerMenu] = useState<boolean>(false);
-  const currentPath = DetectedPath();
 
   // Fonction pour afficher le menu false = fermer true = ouvrir
   const seeMenu = (): void => {
     setOpenBurgerMenu(!openBurgerMenu);
   };
 
-  // on detecte quand l'utilisateur est sur la page accueil
-  const homePage = currentPath === "/";
-
   return (
     <header>
-      <nav className={`nav ${homePage ? 'nav-home' : ''}`}>
+      <nav className='nav'>
         <div className="contain-logo">
           <img src={logo} alt="logo" className="logo" />
         </div>

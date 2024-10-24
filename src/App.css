@@ -1,3 +1,9 @@
+/* GENERAL */
+
+.first-section {
+    padding: 200px 0;
+}
+
 /* HEADER  */
 
 .nav {
@@ -8,10 +14,7 @@
     padding: 0 18px;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.nav-home {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -77,7 +80,6 @@
     background-position: center;
     height: 100vh;
     position: relative;
-    padding: 250px 0;
 }
 
 .card-home {
@@ -145,3 +147,53 @@
     line-height: 1;
     font-size: 1em;
 }
+
+/* CONTACT  */
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-container > button {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contain-contact-componant {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.contain-input {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.contact-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.contain-adaptiv-img {
+    width: 100%;
+    max-width: 300px; /* Ajustez selon vos besoins */
+  }
+  
+  .serveur {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .form-container {
+    width: 100%;
+  }
