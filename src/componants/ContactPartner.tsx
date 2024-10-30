@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { db } from "../config/dbConfig";
+import sendEmail from "../config/emailConfig";
 import { collection, addDoc } from "firebase/firestore";
 
 // typage du retour attendu du formulaire
@@ -38,6 +39,8 @@ const ContactPartner: React.FC = () => {
     try {
       // envoi les données saisie par l'utilisateur à la base de donnée
       await addDoc(collection(db, "contacts-partenaire"), userData); 
+      // envoi les données saisie par l'utilisateur par mail
+      await sendEmail(userData);
     } catch (error) {
       console.error("erreur :", error);
     }

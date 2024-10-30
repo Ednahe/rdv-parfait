@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { db } from "../config/dbConfig";
+import sendEmail from "../config/emailConfig";
 import { collection, addDoc } from "firebase/firestore";
 
 // typage du retour attendu du formulaire
@@ -8,6 +9,7 @@ interface UserData {
   prenom: string;
   email: string;
   telephone: string;
+  societe: string,
   message: string;
 }
 
@@ -18,6 +20,7 @@ const ContactUser: React.FC = () => {
     prenom: "",
     email: "",
     telephone: "",
+    societe: "",
     message: "",
   });
 
@@ -36,6 +39,7 @@ const ContactUser: React.FC = () => {
     try {
       // envoi les données saisie par l'utilisateur à la base de donnée
       await addDoc(collection(db, "contacts-utilisateur"), userData);
+      await sendEmail(userData);
     } catch (error) {
       console.error("erreur :", error);
     }
