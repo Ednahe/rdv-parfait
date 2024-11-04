@@ -59,7 +59,7 @@ const SwiperHome: React.FC = () => {
         direction={"vertical"}
         speed={800}
         loop={true}
-        autoplay={{ delay: 2000, disableOnInteraction: false }}
+        autoplay={{ delay: 3200, disableOnInteraction: false }}
         modules={[Autoplay]}
         allowTouchMove={false}
         noSwiping={true}
@@ -69,11 +69,11 @@ const SwiperHome: React.FC = () => {
         {/* injection des données dans le swiper  */}
         {dataSlide.map((data, index) => (
           <SwiperSlide key={index}>
-            <div className="slide-content" style={{ background: data.background }}>
-              <h1 className="title-swip" style={{ color: data.color }}>
-                {data.title}
-              </h1>
-            </div>
+              <div className="slide-content" style={{ background: data.background }}>
+                <span className="title-swip" style={{ color: data.color }}>
+                  {data.title}
+                </span>
+              </div>
           </SwiperSlide>
         ))}
       </Swiper>

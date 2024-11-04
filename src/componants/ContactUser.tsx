@@ -9,7 +9,7 @@ interface UserData {
   prenom: string;
   email: string;
   telephone: string;
-  societe: string,
+  societe: string;
   message: string;
 }
 
@@ -39,6 +39,7 @@ const ContactUser: React.FC = () => {
     try {
       // envoi les données saisie par l'utilisateur à la base de donnée
       await addDoc(collection(db, "contacts-utilisateur"), userData);
+      // envoi du mail
       await sendEmail(userData);
     } catch (error) {
       console.error("erreur :", error);
