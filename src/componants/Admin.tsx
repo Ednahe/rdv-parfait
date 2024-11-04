@@ -16,7 +16,6 @@ interface BlogPost {
 const Admin: React.FC = () => {
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
-  const [imageUrl, setImageUrl] = useState<string>("");
   const [tag, setTag] = useState<string>("");
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [postSuccess, setPostSuccess] = useState<boolean>(false);
@@ -43,7 +42,7 @@ const Admin: React.FC = () => {
         title,
         content,
         createdAt: new Date(),
-        imageUrl,
+        imageUrl: downloadURL,
         tag,
       };
 
@@ -53,11 +52,11 @@ const Admin: React.FC = () => {
       setPostSuccess(true);
       setTitle("");
       setContent("");
-      setImageUrl("");
+      setImageFile(null);
       setTag("");
 
-      // le message de réussite disparait au bout de 3 secondes
-      setTimeout(() => setPostSuccess(false), 3000);
+      // le message de réussite disparait au bout de 4 secondes
+      setTimeout(() => setPostSuccess(false), 4000);
     } catch (error) {
       console.error("erreur :", error);
     }

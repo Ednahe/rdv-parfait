@@ -7,7 +7,6 @@ import { db } from "../config/dbConfig";
 interface BlogPost {
   title: string;
   content: string;
-  categories: string[];
   createdAt: Date;
   imageUrl: string;
   tag: string;
@@ -29,7 +28,6 @@ const BlogDetail: React.FC = () => {
                 setPost({
                     title: data.title,
                     content: data.content,
-                    categories: data.categories,
                     createdAt: new Date(data.createdAt.toDate()),
                     imageUrl: data.imageUrl,
                     tag: data.tag,
@@ -54,10 +52,9 @@ const BlogDetail: React.FC = () => {
       ) : (
         <>
           <h1>{post.title}</h1>
-          <img src={post.imageUrl} alt={post.title} style={{ width: "100%", height: "auto" }} />
+          <img src={post.imageUrl} className="img-blog" />
           <p>{post.content}</p>
           <span>Date de création : {post.createdAt.toLocaleDateString()}</span>
-          <p>Catégories : {post.categories.join(", ")}</p>
           <p>Tag : {post.tag}</p>
         </>
       )}

@@ -49,7 +49,7 @@ const Blog: React.FC = () => {
           <article key={post.id}>
             <Link to={`/blog/${post.id}`}>
               <h2>{post.title}</h2>
-              <img src={post.imageUrl} alt={post.title} />
+              <img src={post.imageUrl} />
               <div>{post.content}</div>
               <span>{post.createdAt.toLocaleDateString()}</span>
               <p>Tag: {post.tag}</p>
