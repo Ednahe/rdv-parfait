@@ -12,7 +12,7 @@ const Header: React.FC = () => {
 
   return (
     <header>
-      <nav className='nav'>
+      <nav className="nav">
         <div className="contain-logo">
           <img src={logo} alt="logo" className="logo" />
         </div>
@@ -20,6 +20,9 @@ const Header: React.FC = () => {
           <div className="contain-button-nav">
             <button className="button-nav outline contrast">Run App</button>
             <button className="button-nav outline contrast">Inscription</button>
+            <button className="button-nav outline contrast">
+              <a href="/devenir-partenaire">Devenir partenaire</a>
+            </button>
           </div>
           <div className="contain-burger-menu" onClick={seeMenu}>
             <img src={burgerMenu} alt="burger-menu" className="burger-menu" />
@@ -37,9 +40,6 @@ const Header: React.FC = () => {
               </li>
               <li>
                 <a href="/contact">Contact</a>
-              </li>
-              <li>
-                <a href="/devenir-partenaire">Devenir partenaire</a>
               </li>
             </ul>
           </div>

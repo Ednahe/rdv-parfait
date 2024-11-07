@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { db } from "../config/dbConfig";
 import sendEmail from "../config/emailConfig";
 import { collection, addDoc } from "firebase/firestore";
+import key from "../config/recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 
 // typage du retour attendu du formulaire
 interface UserData {
@@ -14,6 +16,9 @@ interface UserData {
 }
 
 const ContactUser: React.FC = () => {
+  const [sendSucces, setSendSucces] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+  const [capVal, setCapVal] = useState<string | null>(null);
   // etat local du formulaire
   const [userData, setUserData] = useState<UserData>({
     nom: "",
@@ -29,18 +34,47 @@ const ContactUser: React.FC = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    // changement de l'etat local avec les nouvelles données
+
+    // expression régulière pour s'assurer que l'utilisateur rentre les bons caractères dans les bons champs
+    if (name === "nom" || name === "prenom") {
+      if (!/^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$/.test(value)) return; // N'accepte que les lettres et certains caractères
+    } else if (name === "telephone") {
+      if (!/^\d{0,16}$/.test(value)) return; // N'accepte que des chiffres, jusqu'à 16 caractères
+    }
+    // mise à jour de l'état local du formulaire
     setUserData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  // envoi du formulaire à la base de donnée
+  // Envoi du formulaire avec validation
   const send = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Vérification de l'email avec une expression régulière plus stricte
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(userData.email)) {
+      setError(true);
+      setTimeout(() => setError(false), 4000);
+      return;
+    }
     try {
       // envoi les données saisie par l'utilisateur à la base de donnée
       await addDoc(collection(db, "contacts-utilisateur"), userData);
       // envoi du mail
       await sendEmail(userData);
+      setSendSucces(true);
+
+      // réinitialiser le formulaire après un envoi réussi
+      setUserData({
+        nom: "",
+        prenom: "",
+        email: "",
+        telephone: "",
+        societe: "",
+        message: "",
+      });
+
+      // masquer le message de succès après 4 secondes
+      setTimeout(() => setSendSucces(false), 4000);
     } catch (error) {
       console.error("erreur :", error);
     }
@@ -69,7 +103,15 @@ const ContactUser: React.FC = () => {
         maxLength={2000}
         placeholder="Entrez votre message ici..."
       ></textarea>
-      <button type="submit">Envoyer</button>
+      <ReCAPTCHA
+        sitekey={key}
+        onChange={(val: string | null) => setCapVal(val)}
+      />
+      <button type="submit" className="btn-form" disabled={!capVal}>Envoyer</button>
+      {sendSucces && <p className="p-succes">Message envoyé avec succès.</p>}
+      {error && (
+        <p className="p-succes">Veuillez entrer une adresse email valide.</p>
+      )}
     </form>
   );
 };

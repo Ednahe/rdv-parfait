@@ -46,11 +46,11 @@ const Blog: React.FC = () => {
     <section className="first-section">
       <div className="contain-blog">
         {blogPosts.map((post) => (
-          <article key={post.id}>
+          <article className="article-blog" key={post.id}>
             <Link to={`/blog/${post.id}`}>
               <h2>{post.title}</h2>
               <img src={post.imageUrl} />
-              <div>{post.content}</div>
+              <p className="blog-content">{post.content}</p>
               <span>{post.createdAt.toLocaleDateString()}</span>
               <p>Tag: {post.tag}</p>
             </Link>

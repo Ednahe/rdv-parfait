@@ -22,12 +22,12 @@ const Home: React.FC = () => {
               cupiditate doloremque provident quod perspiciatis commodi
               explicabo sapiente.
             </p>
-            <span className="span-home">
-              <span className="span-text">Venez découvrir :</span>
-              <SwiperHome />
-            </span>
           </div>
         </div>
+      </section>
+      <section className="section-home">
+        <span className="span-text">Venez découvrir :</span>
+        <SwiperHome />
       </section>
     </>
   );

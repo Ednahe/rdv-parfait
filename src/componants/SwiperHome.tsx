@@ -7,7 +7,6 @@ import "swiper/css/effect-coverflow";
 
 // typage des données contenu dans le swiper
 type SlideData = {
-    color: string;
     title: string;
     background: string;
   };
@@ -16,37 +15,30 @@ const SwiperHome: React.FC = () => {
     // déclaration des données contenu dans le swiper
   const dataSlide: SlideData[] = [
     {
-      color: "red",
       title: "Un restaurant",
       background: "rgba(255, 0, 0, 0.25)"
     },
     {
-      color: "blue",
       title: "Un cinéma",
       background: "rgba(0, 0, 255, 0.25)"
     },
     {
-      color: "green",
       title: "Un bar",
       background: "rgba(0, 255, 0, 0.25)"
     },
     {
-      color: "yellow",
       title: "Une boîte de nuit",
       background: "rgba(255, 255, 0, 0.25)"
     },
     {
-      color: "purple",
       title: "Une exposition",
       background: "rgba(128, 0, 128, 0.25)"
     },
     {
-      color: "orange",
       title: "Un marché",
       background: "rgba(255, 165, 0, 0.25)"
     },
     {
-      color: "pink",
       title: "Un concert",
       background: "rgba(255, 0, 255, 0.25)"
     },
@@ -70,7 +62,7 @@ const SwiperHome: React.FC = () => {
         {dataSlide.map((data, index) => (
           <SwiperSlide key={index}>
               <div className="slide-content" style={{ background: data.background }}>
-                <span className="title-swip" style={{ color: data.color }}>
+                <span className="title-swip">
                   {data.title}
                 </span>
               </div>

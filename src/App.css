@@ -4,6 +4,15 @@
   padding: 200px 0;
 }
 
+.p-succes {
+  text-align: center;
+}
+
+a {
+  color: inherit; 
+  text-decoration: none; 
+}
+
 /* HEADER  */
 
 .nav {
@@ -93,6 +102,7 @@
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   padding: 80px 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .content-card-home {
@@ -109,7 +119,7 @@
   text-align: center;
 }
 
-.span-home {
+.section-home {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -119,8 +129,9 @@
 }
 
 .span-text {
-  display: inline-block;
-  vertical-align: middle;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #333;
 }
 
 /* SWIPER  */
@@ -141,14 +152,18 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  height: 100%;
+  background-color: #eee;
 }
 
 .title-swip {
   text-align: center;
   margin: 0;
   padding: 0;
-  line-height: 1;
-  font-size: 1em;
+  line-height: 1.5;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #0056b3;
 }
 
 /* CONTACT  */
@@ -201,6 +216,10 @@
   width: 100%;
 }
 
+.btn-form {
+  margin-top: 16px;
+}
+
 /* BLOG  */
 
 .contain-blog {
@@ -208,6 +227,8 @@
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .contain-blog article {
@@ -215,10 +236,21 @@
   padding: 1rem;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  max-width: 400px;
+  max-height: 550px;
 }
 
 .contain-blog article:hover {
   transform: translateY(-5px);
+}
+
+.blog-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.5em; 
+  line-height: 1.5em; 
 }
 
 .contain-blog img {
@@ -230,4 +262,31 @@
 .img-blog {
   width: 100%;
   height: auto;
+}
+
+/* A PROPOS  */
+
+.contain-about {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contain-about > h1 {
+  text-align: center;
+}
+
+.contain-content-about {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.contain-content-about > p {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }

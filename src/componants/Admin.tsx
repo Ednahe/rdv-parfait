@@ -93,7 +93,7 @@ const Admin: React.FC = () => {
         />
         <button type="submit">Poster</button>
       </form>
-      {postSuccess && <p>Post publié avec succès.</p>}
+      {postSuccess && <p className="p-succes">Post publié avec succès.</p>}
     </section>
   );
 };
