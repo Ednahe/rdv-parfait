@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { db } from "../config/dbConfig";
+import { useAuthAdmin } from "../hooks/useAuthAdmin";
 import { addDoc, collection } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
@@ -19,6 +20,9 @@ const Admin: React.FC = () => {
   const [tag, setTag] = useState<string>("");
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [postSuccess, setPostSuccess] = useState<boolean>(false);
+  const { user, isAdmin, loading } = useAuthAdmin();
+
+  // construire la logique d'auth
 
   // fonction pour poster un article
   const postArticle = async (e: React.FormEvent) => {
