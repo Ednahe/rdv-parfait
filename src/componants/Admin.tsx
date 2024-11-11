@@ -20,9 +20,7 @@ const Admin: React.FC = () => {
   const [tag, setTag] = useState<string>("");
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [postSuccess, setPostSuccess] = useState<boolean>(false);
-  const { user, isAdmin, loading } = useAuthAdmin();
-
-  // construire la logique d'auth
+  const { user, isAdmin, login, logout } = useAuthAdmin();
 
   // fonction pour poster un article
   const postArticle = async (e: React.FormEvent) => {
@@ -76,27 +74,38 @@ const Admin: React.FC = () => {
 
   return (
     <section className="first-section">
-      <form onSubmit={postArticle}>
-        <input
-          type="text"
-          placeholder="Titre"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <textarea
-          placeholder="Contenu"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        />
-        <input type="file" accept="image/*" onChange={downloadImage} />
-        <input
-          type="text"
-          placeholder="Tag"
-          value={tag}
-          onChange={(e) => setTag(e.target.value)}
-        />
-        <button type="submit">Poster</button>
-      </form>
+      {user ? (
+        <div>
+          <button onClick={logout}>Déconnexion</button>
+          {isAdmin ? (
+            <form onSubmit={postArticle}>
+              <input
+                type="text"
+                placeholder="Titre"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+              <textarea
+                placeholder="Contenu"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+              />
+              <input type="file" accept="image/*" onChange={downloadImage} />
+              <input
+                type="text"
+                placeholder="Tag"
+                value={tag}
+                onChange={(e) => setTag(e.target.value)}
+              />
+              <button type="submit">Poster</button>
+            </form>
+          ) : (
+            <p>Vous n'êtes pas autorisé à poster des articles.</p>
+          )}
+        </div>
+      ) : (
+        <button onClick={login}>Connexion avec Google</button>
+      )}
       {postSuccess && <p className="p-succes">Post publié avec succès.</p>}
     </section>
   );
