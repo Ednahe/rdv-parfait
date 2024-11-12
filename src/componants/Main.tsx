@@ -7,6 +7,7 @@ import Contact from "./Contact";
 import About from "./About";
 import Partner from "./Partner";
 import Admin from "./Admin";
+import Error404 from "./Error404";
 
 const Main: React.FC = () => {
 
@@ -19,7 +20,8 @@ const Main: React.FC = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/a-propos" element={<About />} />
           <Route path="/devenir-partenaire" element={<Partner />} />
-          <Route path="/admin-master" element={<Admin />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </Router>
     </>

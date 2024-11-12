@@ -1,5 +1,6 @@
 import React from "react";
 import SwiperHome from "./SwiperHome";
+import ThirdPartHome from "./ThirdPartHome";
 
 const Home: React.FC = () => {
   return (
@@ -29,6 +30,7 @@ const Home: React.FC = () => {
         <span className="span-text">Venez découvrir :</span>
         <SwiperHome />
       </section>
+      <ThirdPartHome />
     </>
   );
 };
