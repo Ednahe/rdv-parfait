@@ -1,6 +1,7 @@
 import React from "react";
 import SwiperHome from "./SwiperHome";
 import ThirdPartHome from "./ThirdPartHome";
+import BtnApp from "./BtnApp";
 
 const Home: React.FC = () => {
   return (
@@ -27,8 +28,11 @@ const Home: React.FC = () => {
         </div>
       </section>
       <section className="section-home">
-        <span className="span-text">Venez découvrir :</span>
-        <SwiperHome />
+        <div className="contain-swiper">
+          <span className="span-text">Venez découvrir :</span>
+          <SwiperHome />
+        </div>
+        <BtnApp />
       </section>
       <ThirdPartHome />
     </>

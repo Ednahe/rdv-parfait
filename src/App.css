@@ -122,11 +122,18 @@ a {
 
 .section-home {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
+  flex-direction: column;
+  gap: 30px;
   align-items: center;
   justify-content: center;
   padding: 30px;
+  height: 100vh;
+}
+
+.contain-swipper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .span-text {
@@ -140,7 +147,7 @@ a {
 .container-swiper-home {
   display: inline-block;
   vertical-align: middle;
-  height: 1em;
+  height: 2em;
   overflow: hidden;
 }
 
@@ -154,17 +161,32 @@ a {
   justify-content: center;
   text-align: center;
   height: 100%;
-  background-color: #eee;
 }
 
 .title-swip {
   text-align: center;
   margin: 0;
   padding: 0;
-  line-height: 1.5;
-  font-size: 1.2em;
+  line-height: 1.5rem;
+  font-size: 1.5em;
   font-weight: bold;
-  color: #0056b3;
+}
+
+.swiper-wrapper {
+  padding: 0;
+}
+
+/* BTN APP  */
+
+.container-btn-app {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.contain-btn-app > img {
+  width: 200px;
+  height: 60px;
 }
 
 /* CONTACT  */
