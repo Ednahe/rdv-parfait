@@ -48,7 +48,7 @@ const Blog: React.FC = () => {
         {blogPosts.map((post) => (
           <article className="article-blog" key={post.id}>
             <Link to={`/blog/${post.id}`}>
-              <h2>{post.title}</h2>
+              <h2 className="title-blog">{post.title}</h2>
               <img src={post.imageUrl} />
               <p className="blog-content">{post.content}</p>
               <span>{post.createdAt.toLocaleDateString()}</span>

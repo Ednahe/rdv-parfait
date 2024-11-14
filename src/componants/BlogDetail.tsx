@@ -46,16 +46,18 @@ const BlogDetail: React.FC = () => {
   }, [id]);
 
   return (
-    <section className="first-section">
+    <section className="first-section section-blog-detail">
       {!post ? (
         <p>Erreur, post inconnu</p>
       ) : (
         <>
-          <h1>{post.title}</h1>
-          <img src={post.imageUrl} className="img-blog" />
-          <p>{post.content}</p>
-          <span>Date de création : {post.createdAt.toLocaleDateString()}</span>
+          <h1 className="title-blog">{post.title}</h1>
+          <div className="contain-img-blog">
+            <img src={post.imageUrl} className="img-blog" />
+          </div>
           <p>Tag : {post.tag}</p>
+          <p className="p-blog">{post.content}</p>
+          <span className="published-date">Publié le : {post.createdAt.toLocaleDateString()}</span>
         </>
       )}
     </section>

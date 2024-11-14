@@ -7,7 +7,7 @@ const About: React.FC = () => {
     <section className="first-section">
       <div className="contain-about">
         <h1>A propos</h1>
-        <div className="contain-content-about">
+        <article className="contain-content-about">
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             Repellendus molestias natus deleniti consectetur saepe nihil quam
@@ -24,8 +24,8 @@ const About: React.FC = () => {
           <span>
             <img src={about1} />
           </span>
-        </div>
-        <div className="contain-content-about">
+        </article>
+        <article className="contain-content-about">
           <span>
             <img src={about2} />
           </span>
@@ -42,7 +42,7 @@ const About: React.FC = () => {
             quibusdam voluptatibus ipsa consectetur dolorem, doloremque unde
             quod adipisci, expedita sit aperiam explicabo laudantium eius.
           </p>
-        </div>
+        </article>
       </div>
     </section>
   );
