@@ -51,8 +51,10 @@ const ContactUser: React.FC = () => {
 
     // Vérification de l'email avec une expression régulière plus stricte
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // si email non valide on envoi un message d'erreur
     if (!emailRegex.test(userData.email)) {
       setError(true);
+      // masquer le message d'erreur au bout de 4 sec
       setTimeout(() => setError(false), 4000);
       return;
     }
