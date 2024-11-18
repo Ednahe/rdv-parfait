@@ -110,9 +110,9 @@ const ContactUser: React.FC = () => {
         onChange={(val: string | null) => setCapVal(val)}
       />
       <button type="submit" className="btn-form" disabled={!capVal}>Envoyer</button>
-      {sendSucces && <p className="p-succes">Message envoyé avec succès.</p>}
+      {sendSucces && <p className="center">Message envoyé avec succès.</p>}
       {error && (
-        <p className="p-succes">Veuillez entrer une adresse email valide.</p>
+        <p className="center">Veuillez entrer une adresse email valide.</p>
       )}
     </form>
   );

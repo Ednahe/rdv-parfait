@@ -106,7 +106,7 @@ const Admin: React.FC = () => {
       ) : (
         <button onClick={login}>Connexion avec Google</button>
       )}
-      {postSuccess && <p className="p-succes">Post publié avec succès.</p>}
+      {postSuccess && <p className="center">Post publié avec succès.</p>}
     </section>
   );
 };

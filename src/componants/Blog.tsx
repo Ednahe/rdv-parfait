@@ -44,6 +44,7 @@ const Blog: React.FC = () => {
 
   return (
     <section className="first-section">
+      <h1 className="center">Découvrez nos articles</h1>
       <div className="contain-blog">
         {blogPosts.map((post) => (
           <article className="article-blog" key={post.id}>

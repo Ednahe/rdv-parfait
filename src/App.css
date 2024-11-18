@@ -5,7 +5,7 @@
   padding-bottom: 50px;
 }
 
-.p-succes {
+.center {
   text-align: center;
 }
 
@@ -337,7 +337,8 @@ a {
 .contain-content-about {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 0.625rem;
+  padding: 1.5625rem;
 }
 
 .contain-content-about > p {
