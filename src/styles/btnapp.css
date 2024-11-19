@@ -1,0 +1,10 @@
+.container-btn-app {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.contain-btn-app > img {
+  width: 200px;
+  height: 60px;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../images/logo.png";
 import linkedin from "../images/linkedin.svg";
 import instagram from "../images/instagram.svg";
+import '../styles/footer.css';
 
 const Footer: React.FC = () => {
   return (

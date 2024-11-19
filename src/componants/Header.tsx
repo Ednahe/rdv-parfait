@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../images/logo.png";
 import burgerMenu from "../images/burger.svg";
+import '../styles/header.css';
 
 const Header: React.FC = () => {
   const [openBurgerMenu, setOpenBurgerMenu] = useState<boolean>(false);

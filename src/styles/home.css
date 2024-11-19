@@ -1,0 +1,28 @@
+.section-home {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  height: 100vh;
+}
+
+.container-second-home {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.contain-swipper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.span-text {
+  font-size: 1.5em;
+  font-weight: 600;
+}

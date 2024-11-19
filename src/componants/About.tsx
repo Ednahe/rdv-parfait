@@ -1,6 +1,7 @@
 import React from "react";
 import about1 from '../images/about1.jpg';
 import about2 from '../images/about2.jpg';
+import '../styles/about.css';
 
 const About: React.FC = () => {
   return (

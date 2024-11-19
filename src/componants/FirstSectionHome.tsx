@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/firstsectionhome.css';
 
 const FirstSectionHome: React.FC = () => {
 

@@ -1,0 +1,28 @@
+.footer {
+  box-shadow: 0 -2px 2px rgba(255, 255, 255, 0.8);
+}
+
+.container-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 18px;
+}
+
+.div-footer {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-footer {
+  width: 20px;
+  height: 20px;
+  filter: invert(100%) sepia(64%) saturate(0%) hue-rotate(174deg)
+    brightness(109%) contrast(100%);
+}

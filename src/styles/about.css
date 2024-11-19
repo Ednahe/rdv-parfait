@@ -1,0 +1,25 @@
+.contain-about {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contain-about > h1 {
+  text-align: center;
+}
+
+.contain-content-about {
+  display: flex;
+  flex-direction: row;
+  gap: 0.625rem;
+  padding: 1.5625rem;
+}
+
+.contain-content-about > p {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}

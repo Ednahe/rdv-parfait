@@ -1,6 +1,7 @@
 import React from "react";
 import appstore from '../images/appstore.png';
 import playstore from '../images/playstore.png';
+import '../styles/btnapp.css';
 
 const BtnApp: React.FC = () => {
   return (

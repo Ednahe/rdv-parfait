@@ -4,6 +4,7 @@ import ThirdPartHome from "./ThirdPartHome";
 import BtnApp from "./BtnApp";
 import FirstSectionHome from "./FirstSectionHome";
 import serveur from "../images/serveur.png";
+import '../styles/home.css';
 
 const Home: React.FC = () => {
   return (

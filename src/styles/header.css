@@ -1,0 +1,66 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+.burger-menu {
+  width: 20px;
+  height: 20px;
+  filter: invert(100%) sepia(64%) saturate(0%) hue-rotate(174deg)
+    brightness(109%) contrast(100%);
+  cursor: pointer;
+}
+
+.container-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.contain-button-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.contain-menu {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  width: 280px;
+  height: auto;
+  position: absolute;
+  top: 100px;
+  max-height: calc(100vh - 170px);
+  z-index: 1000;
+  right: 24px;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.contain-menu.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.ul-menu {
+  display: flex;
+  flex-direction: column;
+}
