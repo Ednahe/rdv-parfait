@@ -122,12 +122,20 @@ a {
 
 .section-home {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 30px;
   align-items: center;
   justify-content: center;
   padding: 30px;
   height: 100vh;
+}
+
+.container-second-home {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
 }
 
 .contain-swipper {
