@@ -1,0 +1,25 @@
+.third-section {
+    height: 100vh;
+}
+
+.contain-third-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.test {
+    border-top: 4px solid red;
+    border-radius: 25px;
+}
+
+.test1 {
+    border-left: 4px solid red;
+    border-radius: 25px;
+    height: 10rem;
+}
+
+.test2 {
+    border-right: 4px solid red;
+    border-radius: 25px;
+    height: 10rem;
+}
