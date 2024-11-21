@@ -1,25 +1,25 @@
-.third-section {
-    height: 100vh;
-}
+@import url('./variables.css');
 
 .contain-third-section {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.test {
-    border-top: 4px solid red;
-    border-radius: 25px;
+.try {
+    padding: 100px;
+    border-top: var(--border-color);
+    border-left: var(--border-color);
+    border-bottom: var(--border-color);
+    border-radius: 16px;
 }
 
-.test1 {
-    border-left: 4px solid red;
-    border-radius: 25px;
-    height: 10rem;
+.try2 {
+    padding: 100px;
+    border-right: var(--border-color);
+    border-radius: 16px;
 }
 
-.test2 {
-    border-right: 4px solid red;
-    border-radius: 25px;
-    height: 10rem;
+.img-test {
+    width: 200px;
+    height: 200px;
 }

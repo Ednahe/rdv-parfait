@@ -32,3 +32,18 @@
   color: #000;
   text-align: center;
 }
+
+.contain-btn-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contain-btn-home > button {
+  box-shadow: 2px 2px 8px rgba(5, 5, 5, 0.5);
+}
+
+.contain-btn-home > button:hover {
+  box-shadow: 4px -2px 10px rgba(5, 5, 5, 0.5);
+}

@@ -22,6 +22,9 @@ const FirstSectionHome: React.FC = () => {
               cupiditate doloremque provident quod perspiciatis commodi
               explicabo sapiente.
             </p>
+            <div className="contain-btn-home">
+              <button className="secondary">voyager</button>
+            </div>
           </div>
         </div>
       </section>

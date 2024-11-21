@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/thirdparthome.css';
+import about1 from '../images/about1.jpg';
 
 const ThirdPartHome: React.FC = () => {
 
@@ -9,14 +10,20 @@ const ThirdPartHome: React.FC = () => {
                 <h1>parcours utilisateur</h1>
                 <div className="test">
                     <span>bonjour</span>
-                </div>
-                <div className="test1">
+                    <div className="try">
+                        <img src={about1} alt="" className="img-test" />
+                    </div>
                 </div>
                 <div className="test">
-                    <span>test</span>
+                    <div className="try2">
+                        <img src={about1} alt="" className="img-test" />
+                    </div>
                 </div>
-                <div className="test2"></div>
-                <div className="test"></div>
+                <div className="test">
+                    <div className="try">
+                        <img src={about1} alt="" className="img-test" />
+                    </div>
+                </div>
             </div>
         </section>
     )
