@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../images/logo.png";
 import burgerMenu from "../images/burger.svg";
-import '../styles/header.css';
+import "../styles/header.css";
 
 const Header: React.FC = () => {
   const [openBurgerMenu, setOpenBurgerMenu] = useState<boolean>(false);
@@ -42,6 +42,20 @@ const Header: React.FC = () => {
               <li>
                 <a href="/contact">Contact</a>
               </li>
+              <li className="hidden">
+                <a href="/devenir-partenaire">Devenir partenaire</a>
+              </li>
+              <div className="contain-btn-burger hidden">
+                <li>
+                  <button className="button-nav outline">Run App</button>
+                </li>
+                <li>
+                  <button className="button-nav outline">Inscription</button>
+                </li>
+              </div>
+              <div className="hidden">
+                <img src={logo} alt="logo rdv parfait" className="logo-burger"/>
+              </div>
             </ul>
           </div>
         </div>

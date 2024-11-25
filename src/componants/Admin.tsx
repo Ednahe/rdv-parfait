@@ -26,6 +26,7 @@ const Admin: React.FC = () => {
   const postArticle = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // si aucune image n'est mise
     if (!imageFile) {
       console.error("aucune image détectée.");
       return;

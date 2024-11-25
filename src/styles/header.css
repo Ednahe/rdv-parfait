@@ -63,4 +63,58 @@
 .ul-menu {
   display: flex;
   flex-direction: column;
+  gap: 24px;
+}
+
+.ul-menu > li > a {
+  color: black;
+}
+
+.ul-menu > li > a:hover {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.contain-btn-burger {
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .contain-btn-burger {
+    display: flex;
+  }
+
+  .contain-button-nav {
+    display: none;
+  }
+
+  .contain-menu {
+    width: 100%;
+    right: 0;
+    height: 100vh;
+    max-height: 100vh;
+  }
+
+  .ul-menu > li {
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo-burger {
+    width: 200px;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .hidden {
+    display: block;
+  }
 }

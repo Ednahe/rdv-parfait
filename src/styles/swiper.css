@@ -29,3 +29,10 @@
 .swiper-wrapper {
   padding: 0;
 }
+
+.contain-swiper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
