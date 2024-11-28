@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../images/logo.png";
 import burgerMenu from "../images/burger.svg";
+import cross from "../images/cross.svg";
 import "../styles/header.css";
 
 const Header: React.FC = () => {
@@ -26,7 +27,15 @@ const Header: React.FC = () => {
             </button>
           </div>
           <div className="contain-burger-menu" onClick={seeMenu}>
-            <img src={burgerMenu} alt="burger-menu" className="burger-menu" />
+            {openBurgerMenu ? (
+              <img
+                src={cross}
+                alt="croix pour fermer le menu"
+                className="burger-menu"
+              />
+            ) : (
+              <img src={burgerMenu} alt="burger-menu" className="burger-menu" />
+            )}
           </div>
           <div className={`contain-menu ${openBurgerMenu ? "active" : ""}`}>
             <ul className="ul-menu">
@@ -52,9 +61,6 @@ const Header: React.FC = () => {
                 <li>
                   <button className="button-nav outline">Inscription</button>
                 </li>
-              </div>
-              <div className="hidden">
-                <img src={logo} alt="logo rdv parfait" className="logo-burger"/>
               </div>
             </ul>
           </div>
