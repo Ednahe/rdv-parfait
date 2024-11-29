@@ -25,6 +25,7 @@
     background-color: red; 
     position: absolute;
     left: calc(0% - 8px);
+    bottom: 50%;
 }
 
 .try2 {
@@ -54,16 +55,12 @@
     opacity: 0;
     transform: translateX(100%);
     animation: appear-right 2s forwards;
-    /* animation-timeline: view();
-    animation-range: entry 0; */
 }
 
 .anim2 {
     opacity: 0;
     transform: translateX(-100%);
     animation: appear-left 2s forwards;
-    /* animation-timeline: view();
-    animation-range: entry 0; */
 }
 
 @keyframes appear-right {

@@ -1,23 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../styles/thirdparthome.css";
 import about1 from "../images/about1.jpg";
 
 const ThirdPartHome: React.FC = () => {
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        console.log(entry.isIntersecting);
-        console.log(observer);     
-      });
-    });
-
-    // Sélectionner les éléments .anim1 et .anim2
-    const elementsToObserve = document.querySelectorAll(".anim1, .anim2");
-    elementsToObserve.forEach((element) => observer.observe(element));
-
-    // Nettoyer les observers lors du démontage du composant
-    return () => observer.disconnect();
-  }, []);
     
   return (
     <section className="third-section">
