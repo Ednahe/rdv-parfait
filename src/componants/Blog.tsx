@@ -5,7 +5,8 @@ import { db } from "../config/dbConfig";
 
 // typage attendu des données du blog
 interface BlogPost {
-  id: string;
+  id: string,
+  slug: string;
   title: string;
   content: string;
   categories: string[];
@@ -24,6 +25,7 @@ const Blog: React.FC = () => {
       const querySnapshot = await getDocs(collection(db, "blogPosts"));
       const postsData: BlogPost[] = querySnapshot.docs.map((doc) => ({
         id: doc.id,
+        slug: doc.data().slug,
         title: doc.data().title,
         content: doc.data().content,
         categories: doc.data().categories,
@@ -47,8 +49,8 @@ const Blog: React.FC = () => {
       <h1 className="center">Découvrez nos articles</h1>
       <div className="contain-blog">
         {blogPosts.map((post) => (
-          <article className="article-blog" key={post.id}>
-            <Link to={`/blog/${post.id}`}>
+          <article className="article-blog" key={post.slug || post.id}>
+            <Link to={`/blog/${post.slug}`}>
               <h2 className="title-blog">{post.title}</h2>
               <img src={post.imageUrl} />
               <p className="blog-content">{post.content}</p>

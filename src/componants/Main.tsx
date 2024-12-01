@@ -16,7 +16,7 @@ const Main: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogDetail />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/a-propos" element={<About />} />
           <Route path="/devenir-partenaire" element={<Partner />} />
