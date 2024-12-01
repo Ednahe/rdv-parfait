@@ -36,9 +36,11 @@ const Admin: React.FC = () => {
     }
 
     try {
+      // vérification si le slug existe déjà dans la base de donnée
       const slugQuery = query(collection(db, "blogPosts"), where("slug", "==", slug));
       const slugSnapshot = await getDocs(slugQuery);
   
+      // si slugs identiques on envoie une alerte
       if (!slugSnapshot.empty) {
         alert("Impossible d'avoir deux slugs identique dans la base de donnée.");
         return;
@@ -85,6 +87,7 @@ const Admin: React.FC = () => {
     }
   };
 
+  // vérification si le slug existe dans la base de donnée
   const checkSlug = async (slug: string) => {
     const slugQuery = query(collection(db, "blogPosts"), where("slug", "==", slug));
     const querySnapshot = await getDocs(slugQuery);
@@ -110,6 +113,7 @@ const Admin: React.FC = () => {
             value={slug}
             onChange={(e) => setSlug(e.target.value)}
           />
+          {/* si slug déjà existant on envoi un message en temps réel à l'utilisateur  */}
           {slugExists && <p>Ce slug est déjà utilisé !</p>}
           <input
             type="text"
