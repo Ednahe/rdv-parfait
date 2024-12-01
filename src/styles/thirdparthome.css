@@ -16,17 +16,27 @@
     border-bottom-right-radius: 0; 
 }
 
-.try::before {
-    content: ""; 
-    display: block;
+/* .try::before {
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background-color: red; 
+    background-color: red;
     position: absolute;
-    left: calc(0% - 8px);
+    left: -8px;
     bottom: 50%;
-}
+    cursor: pointer; 
+} */
+
+.try .circle {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    left: -8px;
+    bottom: 50%;
+    cursor: pointer; 
+  }
 
 .try2 {
     padding: 100px;
@@ -49,6 +59,10 @@
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .anim1 {
