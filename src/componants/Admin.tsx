@@ -3,6 +3,7 @@ import { db } from "../config/dbConfig";
 // import { useAuthAdmin } from "../hooks/useAuthAdmin";
 import { addDoc, collection, query, where, getDocs } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import '../styles/admin.css';
 
 // typage des données d'un article de blog
 interface BlogPost {
@@ -37,12 +38,17 @@ const Admin: React.FC = () => {
 
     try {
       // vérification si le slug existe déjà dans la base de donnée
-      const slugQuery = query(collection(db, "blogPosts"), where("slug", "==", slug));
+      const slugQuery = query(
+        collection(db, "blogPosts"),
+        where("slug", "==", slug)
+      );
       const slugSnapshot = await getDocs(slugQuery);
-  
+
       // si slugs identiques on envoie une alerte
       if (!slugSnapshot.empty) {
-        alert("Impossible d'avoir deux slugs identique dans la base de donnée.");
+        alert(
+          "Impossible d'avoir deux slugs identique dans la base de donnée."
+        );
         return;
       }
       const storage = getStorage(); // Récupérer l'instance de stockage
@@ -89,11 +95,14 @@ const Admin: React.FC = () => {
 
   // vérification si le slug existe dans la base de donnée
   const checkSlug = async (slug: string) => {
-    const slugQuery = query(collection(db, "blogPosts"), where("slug", "==", slug));
+    const slugQuery = query(
+      collection(db, "blogPosts"),
+      where("slug", "==", slug)
+    );
     const querySnapshot = await getDocs(slugQuery);
     setSlugExists(!querySnapshot.empty);
   };
-  
+
   useEffect(() => {
     if (slug) {
       checkSlug(slug);
@@ -101,9 +110,9 @@ const Admin: React.FC = () => {
   }, [slug]);
 
   return (
-    <section className="first-section">
+    <section className="first-section admin-section">
       {/* {user ? ( */}
-      <div>
+      <div className="contain-admin">
         <button>Déconnexion</button>
         {/* {isAdmin ? ( */}
         <form onSubmit={postArticle}>
@@ -138,11 +147,11 @@ const Admin: React.FC = () => {
         {/* ) : ( */}
         <p>Vous n'êtes pas autorisé à poster des articles.</p>
         {/* )} */}
+        {/* ) : ( */}
+        <button> Connexion avec Google</button>
+        {/* )} */}
+        {postSuccess && <p className="center">Post publié avec succès.</p>}
       </div>
-      {/* ) : ( */}
-      <button> Connexion avec Google</button>
-      {/* )} */}
-      {postSuccess && <p className="center">Post publié avec succès.</p>}
     </section>
   );
 };
