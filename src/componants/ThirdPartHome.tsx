@@ -1,33 +1,26 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "../styles/thirdparthome.css";
 import about1 from "../images/about1.jpg";
 
 const ThirdPartHome: React.FC = () => {
-
   const animClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const element = e.target as HTMLElement;
-    console.log('coucou');
-    
-
-    if(element.classList.contains("try")) {
+    const element = e.currentTarget.querySelector(".article-home");
+    if (element) {
       const animElement = element.querySelector(".contain-article-home");
-      console.log('test');
-      
       if (animElement) {
-        animElement.classList.remove('hidden');
-        animElement.classList.add("anim1");       
-        console.log('test2');      
+        animElement.classList.remove("hidden");
+        animElement.classList.add("anim1");
       }
     }
-  }
-    
+  };
+
   return (
     <section className="third-section">
       <div className="contain-third-section">
         <h1 className="center">parcours utilisateur</h1>
         <div className="test">
-          <div className="try" onClick={animClick}>
-          <span className="circle"></span>
+          <div className="try" onClick={animClick}  data-article>
+            <span className="circle"></span>
             <article className="article-home">
               <div className="contain-article-home hidden">
                 <p>
