@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ContactPartner from "./ContactPartner";
 import ContactUser from "./ContactUser";
 import serveur from '../images/serveur.png';
+import '../styles/contact.css';
 
 const Contact: React.FC = () => {
   const [form, setForm] = useState<boolean>(true);

@@ -54,7 +54,7 @@ const Blog: React.FC = () => {
               <h2 className="title-blog">{post.title}</h2>
               <img src={post.imageUrl} />
               <p className="blog-content">{post.content}</p>
-              <span>{post.createdAt.toLocaleDateString()}</span>
+              <p>{post.createdAt.toLocaleDateString()}</p>
               <p>Tag: {post.tag}</p>
             </Link>
           </article>

@@ -1,0 +1,52 @@
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 90vh;
+}
+
+.contact-container > button {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contain-contact-componant {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.contain-input {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.contact-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.contain-adaptiv-img {
+  width: 100%;
+  max-width: 300px;
+}
+
+.serveur {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.form-container {
+  width: 100%;
+}
+
+.btn-form {
+  margin-top: 16px;
+}

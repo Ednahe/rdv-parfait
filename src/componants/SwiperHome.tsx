@@ -62,9 +62,9 @@ const SwiperHome: React.FC = () => {
         {dataSlide.map((data, index) => (
           <SwiperSlide key={index}>
               <div className="slide-content" style={{ background: data.background }}>
-                <span className="title-swip">
+                <p className="title-swip">
                   {data.title}
-                </span>
+                </p>
               </div>
           </SwiperSlide>
         ))}

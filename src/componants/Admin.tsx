@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../config/dbConfig";
-// import { useAuthAdmin } from "../hooks/useAuthAdmin";
+import { useAuthAdmin } from "../hooks/useAuthAdmin";
 import { addDoc, collection, query, where, getDocs } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import '../styles/admin.css';
@@ -24,7 +24,7 @@ const Admin: React.FC = () => {
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [postSuccess, setPostSuccess] = useState<boolean>(false);
   const [slugExists, setSlugExists] = useState<boolean>(false);
-  // const { user, isAdmin, login, logout } = useAuthAdmin();
+  const { user, isAdmin, login, logout } = useAuthAdmin();
 
   // fonction pour poster un article
   const postArticle = async (e: React.FormEvent) => {
@@ -111,49 +111,48 @@ const Admin: React.FC = () => {
 
   return (
     <section className="first-section admin-section">
-      {/* {user ? ( */}
-      <div className="contain-admin">
-        <button>Déconnexion</button>
-        {/* {isAdmin ? ( */}
-        <form onSubmit={postArticle}>
-          <input
-            type="text"
-            placeholder="slug"
-            value={slug}
-            onChange={(e) => setSlug(e.target.value)}
-          />
-          {/* si slug déjà existant on envoi un message en temps réel à l'utilisateur  */}
-          {slugExists && <p>Ce slug est déjà utilisé !</p>}
-          <input
-            type="text"
-            placeholder="Titre"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <textarea
-            placeholder="Contenu"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-          />
-          <input type="file" accept="image/*" onChange={downloadImage} />
-          <input
-            type="text"
-            placeholder="Tag"
-            value={tag}
-            onChange={(e) => setTag(e.target.value)}
-          />
-          <button type="submit">Poster</button>
-        </form>
-        {/* ) : ( */}
-        <p>Vous n'êtes pas autorisé à poster des articles.</p>
-        {/* )} */}
-        {/* ) : ( */}
-        <button> Connexion avec Google</button>
-        {/* )} */}
-        {postSuccess && <p className="center">Post publié avec succès.</p>}
-      </div>
+      {user ? (
+        <div className="contain-admin">
+          <button onClick={logout}>Déconnexion</button>
+          {isAdmin ? (
+            <form onSubmit={postArticle}>
+              <input
+                type="text"
+                placeholder="slug"
+                value={slug}
+                onChange={(e) => setSlug(e.target.value)}
+              />
+              {slugExists && <p>Ce slug est déjà utilisé !</p>}
+              <input
+                type="text"
+                placeholder="Titre"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+              <textarea
+                placeholder="Contenu"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+              />
+              <input type="file" accept="image/*" onChange={downloadImage} />
+              <input
+                type="text"
+                placeholder="Tag"
+                value={tag}
+                onChange={(e) => setTag(e.target.value)}
+              />
+              <button type="submit">Poster</button>
+            </form>
+          ) : (
+            <p>Vous n'êtes pas autorisé à poster des articles.</p>
+          )}
+          {postSuccess && <p className="center">Post publié avec succès.</p>}
+        </div>
+      ) : (
+        <button onClick={login}>Connexion avec Google</button>
+      )}
     </section>
-  );
+  );  
 };
 
 export default Admin;

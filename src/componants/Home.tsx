@@ -13,7 +13,7 @@ const Home: React.FC = () => {
       <section className="section-home">
         <div className="container-second-home">
           <div className="contain-swiper">
-            <span className="span-text">Venez découvrir :</span>
+            <p className="span-text">Venez découvrir :</p>
             <SwiperHome />
           </div>
           <BtnApp />

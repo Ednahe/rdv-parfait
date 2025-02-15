@@ -3,10 +3,13 @@ import "../styles/thirdparthome.css";
 import about1 from "../images/about1.jpg";
 
 const ThirdPartHome: React.FC = () => {
+  // fonction pour l'animation
   const animClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // element = tous les élements avec la classe article-home
     const element = e.currentTarget.querySelector(".article-home");
     if (element) {
       const animElement = element.querySelector(".contain-article-home");
+      // on enleve la classe hidden pour mettre anim1
       if (animElement) {
         animElement.classList.remove("hidden");
         animElement.classList.add("anim1");
